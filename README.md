@@ -1,4 +1,6 @@
-# AI-Enabled-Visa-Status-Prediction-and-Processing-Time
+---
+
+# AI-Enabled Visa Status Prediction and Processing Time Estimation
 
 ### Milestone 1: Data Collection & Preprocessing
 
@@ -6,9 +8,11 @@
 
 This milestone focuses on collecting relevant visa application data and preparing it for further analysis. The objective is to clean, standardize, and structure the raw data so it can be reliably used in subsequent stages of the project.
 
+---
 
 ## Project Structure
 
+```
 ├── data/
 │   ├── raw/                 # Original dataset
 │   └── processed/           # Cleaned dataset after preprocessing
@@ -18,9 +22,9 @@ This milestone focuses on collecting relevant visa application data and preparin
 │   ├── preprocessing.py    # Data cleaning and preparation
 │
 ├── README.md
+```
 
-
-
+---
 
 ## Tasks Performed
 
@@ -55,10 +59,3 @@ This milestone focuses on collecting relevant visa application data and preparin
 
 ---
 
-
-
-* Review your **preprocessing.py** for mentor-level comments
-* Write a **Milestone-1 explanation** you can speak in viva
-* Create a **submission PDF text**
-
-Just say it.
