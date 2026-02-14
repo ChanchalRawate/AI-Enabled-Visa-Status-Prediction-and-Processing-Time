@@ -13,8 +13,7 @@ This milestone focuses on collecting relevant visa application data and preparin
 ## Project Structure
 
 ```
-├── data/                # Original dataset
-│          
+├── data/                # Original dataset          
 ├──  preprocessing.py    # Data cleaning and preparation
 ├── MIT License 
 ├── README.md
