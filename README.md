@@ -15,8 +15,7 @@ This milestone focuses on collecting relevant visa application data and preparin
 ```
 ├── data/
 │   ├── raw/                 # Original dataset
-│   └── processed/           # Cleaned dataset after preprocessing
-│
+│          
 ├── src/
 │   ├── load_data.py         # Data loading and basic inspection
 │   ├── preprocessing.py    # Data cleaning and preparation
