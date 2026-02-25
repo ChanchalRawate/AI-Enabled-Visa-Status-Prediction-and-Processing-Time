@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel("../data/raw/USAforeignworkerssalarydata.xlsx")
+df = pd.read_excel("../data/raw/USAforeignworkerssalarydata.csv")
 
 print("Initial Shape:", df.shape)
 
