@@ -1,6 +1,6 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
 
- ###Project Overview
+ ### Project Overview
 This project analyzes historical U.S. visa application data to build a predictive model for estimating visa processing time (in days).
 The project follows a structured Machine Learning workflow:
 
