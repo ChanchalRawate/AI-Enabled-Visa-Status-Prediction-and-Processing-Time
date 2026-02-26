@@ -44,7 +44,8 @@ This milestone focuses on collecting relevant visa application data and preparin
 ---
 ### Milestone 2 – EDA & Feature Engineering
 
-This phase focused on understanding patterns and building meaningful predictive features.
+This phase focused on understanding patterns and building meaningful predictive features
+
 ---
 ### Exploratory Data Analysis
 1️⃣ Target Distribution
