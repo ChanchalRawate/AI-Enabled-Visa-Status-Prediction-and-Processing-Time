@@ -10,7 +10,7 @@ Feature Engineering
 Model-Ready Dataset Preparation
 Currently, Milestone 1 and Milestone 2 are completed.
 
-###Problem Statement
+### Problem Statement
 
 Given visa application data, predict the number of days required to process the application.
 
@@ -42,11 +42,11 @@ This milestone focuses on collecting relevant visa application data and preparin
 * A clean, structured dataset ready for exploratory analysis
 
 ---
-###Milestone 2 – EDA & Feature Engineering
+### Milestone 2 – EDA & Feature Engineering
 
 This phase focused on understanding patterns and building meaningful predictive features.
 ---
-###Exploratory Data Analysis
+### Exploratory Data Analysis
 1️⃣ Target Distribution
 Observed skewed distribution of processing times
 Identified extreme outliers in early years
