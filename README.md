@@ -55,11 +55,10 @@ Identified extreme outliers in early years
 2️⃣ Year-wise Trend Analysis
 Processing time decreased dramatically over time:
 
-Year     	Avg Processing Days
----
-2008     	2331
----
-2015      	6
+Year        	Avg Processing Days
+
+2008        	2331
+2015        	6
 This revealed a strong temporal trend and motivated creation of time-based features.
 ---
 🛠 Feature Engineering
