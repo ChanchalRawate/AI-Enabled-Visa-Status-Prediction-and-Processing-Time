@@ -1,6 +1,6 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
 
- Project Overview
+ ###Project Overview
 This project analyzes historical U.S. visa application data to build a predictive model for estimating visa processing time (in days).
 The project follows a structured Machine Learning workflow:
 
@@ -10,13 +10,11 @@ Feature Engineering
 Model-Ready Dataset Preparation
 Currently, Milestone 1 and Milestone 2 are completed.
 
- Problem Statement
+###Problem Statement
 
 Given visa application data, predict the number of days required to process the application.
 
 ### Milestone 1: Data Collection & Preprocessing
-
-## Overview
 
 This milestone focuses on collecting relevant visa application data and preparing it for further analysis. The objective is to clean, standardize, and structure the raw data so it can be reliably used in subsequent stages of the project.
 
@@ -48,7 +46,7 @@ This milestone focuses on collecting relevant visa application data and preparin
 
 This phase focused on understanding patterns and building meaningful predictive features.
 ---
-Exploratory Data Analysis
+###Exploratory Data Analysis
 1️⃣ Target Distribution
 Observed skewed distribution of processing times
 Identified extreme outliers in early years
