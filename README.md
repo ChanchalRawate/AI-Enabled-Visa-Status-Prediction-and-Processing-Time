@@ -242,6 +242,6 @@ visa-processing-prediction/
 * **Python**
 * **Pandas**
 * **VS Code**
-
+* **jupyter notetbook**
 ---
 
