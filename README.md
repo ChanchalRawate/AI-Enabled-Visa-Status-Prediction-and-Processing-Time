@@ -1,6 +1,6 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
 
-## 📌 Project Overview
+## Project Overview
 
 This project analyzes historical U.S. visa application data to build a predictive model for estimating **visa processing time (in days)**.
 
@@ -15,7 +15,7 @@ Currently, **Milestone 1 and Milestone 2 are completed**.
 
 ---
 
-# 🎯 Problem Statement
+#  Problem Statement
 
 Given visa application data, predict the number of days required to process the application.
 
@@ -33,9 +33,9 @@ DECISION_DATE - APPLICATION_DATE
 
 ---
 
-# 🧱 Project Milestones
+# Project Milestones
 
-## ✅ Milestone 1 – Data Cleaning & Preprocessing
+##  Milestone 1 – Data Cleaning & Preprocessing
 
 ### Key Tasks Completed
 
@@ -54,13 +54,13 @@ data/processed/cleaned_visa_data.csv
 
 ---
 
-## ✅ Milestone 2 – EDA & Feature Engineering
+##  Milestone 2 – EDA & Feature Engineering
 
 This phase focused on understanding patterns and building meaningful predictive features.
 
 ---
 
-# 📊 Exploratory Data Analysis
+#  Exploratory Data Analysis
 
 ### 1️⃣ Target Distribution
 
@@ -133,7 +133,7 @@ To avoid noise and unreliable modeling:
 
 ---
 
-# 📈 Feature Validation
+#  Feature Validation
 
 After feature engineering:
 
@@ -144,7 +144,7 @@ After feature engineering:
 
 ---
 
-# 🔢 Encoding & Scaling
+#  Encoding & Scaling
 
 ### Encoding
 
@@ -168,7 +168,7 @@ Target variable was not scaled.
 
 ---
 
-# 📁 Milestone 2 Output
+#  Milestone 2 Output
 
 Final model-ready dataset:
 
@@ -190,7 +190,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-# ⚠ Modeling Consideration
+# Modeling Consideration
 
 Due to strong temporal trends, a random train-test split may introduce:
 
@@ -202,7 +202,7 @@ Milestone 3 will implement a time-aware validation strategy.
 
 ---
 
-# 🗂 Project Structure
+# Project Structure
 
 ```
 visa-processing-prediction/
@@ -224,7 +224,7 @@ visa-processing-prediction/
 
 ---
 
-# 💡 Skills Demonstrated
+#  Skills Demonstrated
 
 * Data Cleaning & Preprocessing
 * Exploratory Data Analysis
