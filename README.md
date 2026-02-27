@@ -5,8 +5,8 @@ This project analyzes historical U.S. visa application data to build a predictiv
 The project follows a structured Machine Learning workflow:
 
 Data Cleaning
-Exploratory Data Analysis (EDA)
-Feature Engineering
+1 Exploratory Data Analysis (EDA)
+2 Feature Engineering
 Model-Ready Dataset Preparation
 Currently, Milestone 1 and Milestone 2 are completed.
 ---
