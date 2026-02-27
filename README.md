@@ -9,11 +9,11 @@ Exploratory Data Analysis (EDA)
 Feature Engineering
 Model-Ready Dataset Preparation
 Currently, Milestone 1 and Milestone 2 are completed.
-
+---
 ### Problem Statement
 
 Given visa application data, predict the number of days required to process the application.
-
+---
 ### Milestone 1: Data Collection & Preprocessing
 
 This milestone focuses on collecting relevant visa application data and preparing it for further analysis. The objective is to clean, standardize, and structure the raw data so it can be reliably used in subsequent stages of the project.
