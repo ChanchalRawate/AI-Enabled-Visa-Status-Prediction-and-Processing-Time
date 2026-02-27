@@ -1,57 +1,5 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
-
- ### Project Overview
-This project analyzes historical U.S. visa application data to build a predictive model for estimating visa processing time (in days).
-The project follows a structured Machine Learning workflow:
-
-Data Cleaning
-1 Exploratory Data Analysis (EDA)
-2 Feature Engineering
-Model-Ready Dataset Preparation
-Currently, Milestone 1 and Milestone 2 are completed.
 ---
-### Problem Statement
-
-Given visa application data, predict the number of days required to process the application.
----
-### Milestone 1: Data Collection & Preprocessing
-
-This milestone focuses on collecting relevant visa application data and preparing it for further analysis. The objective is to clean, standardize, and structure the raw data so it can be reliably used in subsequent stages of the project.
-
-## Tasks Performed
-
-### 1. Data Collection
-
-* Loaded visa-related data from a publicly available source
-* Inspected dataset shape, columns, and missing values
-
-### 2. Data Preprocessing
-
-* Dropped irrelevant and redundant columns
-* Renamed columns for clarity (e.g., application and decision dates)
-* Converted date columns to standard datetime format
-* Created a mandatory derived feature:
-
-  * `processing_time_days` = decision date − application date
-* Handled missing and inconsistent values
-
----
-
-## Output
-
-* A clean, structured dataset ready for exploratory analysis
-
----
-Good. Now we’ll upgrade it properly.
-
-This version is **portfolio-grade**, clean, structured, and recruiter-friendly.
-No academic fluff. No student tone. Professional ML workflow.
-
-You can directly replace your current `README.md` with this.
-
----
-
-# 🛂 Visa Processing Time Prediction
 
 ## 📌 Project Overview
 
@@ -149,7 +97,7 @@ Captures seasonal effects.
 
 Peak (Jan, Feb, Dec) vs Off-Peak months.
 
-### `years_since_start` ⭐
+### `years_since_start` 
 
 Continuous time progression feature:
 
@@ -233,7 +181,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-# 🧠 Key Insights
+#  Key Insights
 
 * Processing efficiency improved significantly over time.
 * Temporal features are dominant predictors.
@@ -243,7 +191,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-# ⚠ Modeling Consideration (Important)
+# ⚠ Modeling Consideration
 
 Due to strong temporal trends, a random train-test split may introduce:
 
@@ -267,24 +215,13 @@ visa-processing-prediction/
 │       └── final_ml_ready_visa_data.csv
 │
 ├── notebooks/
-│   └── 01_eda.ipynb
+│   └── eda.ipynb
 │
 ├── src/
 │   └── preprocessing.py
 │
 └── README.md
 ```
-
----
-
-# 🚀 Next Steps (Milestone 3)
-
-* Implement time-aware train-test split
-* Train regression models
-* Compare baseline vs advanced algorithms
-* Evaluate using MAE / RMSE
-* Perform residual analysis
-* Select best-performing model
 
 ---
 
@@ -299,15 +236,6 @@ visa-processing-prediction/
 * Structured ML Workflow Design
 
 ---
-
-If you want, I can now:
-
-* 🔥 Add visual badges and GitHub polish
-* 🧠 Add model comparison section template
-* 💼 Turn this into resume bullet points
-* 🚀 Plan Milestone 3 architecture
-
-Tell me what you want next.
 
 
 ## Tools Used
