@@ -1,5 +1,4 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
----
 
 ## 📌 Project Overview
 
