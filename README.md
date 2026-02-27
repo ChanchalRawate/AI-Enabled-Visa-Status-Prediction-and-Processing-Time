@@ -80,7 +80,7 @@ This revealed a strong temporal trend and motivated creation of time-based featu
 
 ---
 
-# 🛠 Feature Engineering
+#  Feature Engineering
 
 The following features were created based on data insights:
 
