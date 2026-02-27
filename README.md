@@ -208,16 +208,15 @@ Milestone 3 will implement a time-aware validation strategy.
 visa-processing-prediction/
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│    └── processed/
 │       ├── cleaned_visa_data.csv
 │       └── final_ml_ready_visa_data.csv
 │
-├── notebooks/
-│   └── eda.ipynb
+├─eda.py
+│── eda.ipynb
 │
-├── src/
-│   └── preprocessing.py
+├──raw dataset
+│── preprocessing.py
 │
 └── README.md
 ```
