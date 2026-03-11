@@ -300,8 +300,6 @@ After training both models, their performance was compared using MAE and RMSE.
 | Linear Regression | 82   | 136   |
 | Random Forest     | 30   | 87     |
 
-*(Values will be updated after model execution.)*
-
 Lower values indicate better performance.
 
 ---
@@ -368,40 +366,6 @@ Key deliverables:
 * Ensemble methods are more suitable for complex real-world datasets like visa processing data.
 
 ---
-
-# Updated Project Structure
-
-```
-visa-processing-prediction/
-│
-├── data/
-│   └── processed/
-│       ├── cleaned_visa_data.csv
-│       └── final_ml_ready_visa_data.csv
-│
-├── eda.ipynb
-├── preprocessing.py
-├── modeling.ipynb
-├── eda.py
-│
-└── README.md
-```
-
----
-
-# Skills Demonstrated (Updated)
-
-* Data Cleaning & Preprocessing
-* Exploratory Data Analysis (EDA)
-* Feature Engineering
-* Regression Modeling
-* Model Evaluation (MAE, RMSE)
-* Hyperparameter Tuning
-* Feature Importance Analysis
-* End-to-End Machine Learning Workflow
-
----
-
 # Project Structure
 
 ```
@@ -422,8 +386,21 @@ visa-processing-prediction/
 └── README.md
 ```
 
+
 ---
 
+# Skills Demonstrated (Updated)
+
+* Data Cleaning & Preprocessing
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Regression Modeling
+* Model Evaluation (MAE, RMSE)
+* Hyperparameter Tuning
+* Feature Importance Analysis
+* End-to-End Machine Learning Workflow
+
+---
 
 ## Tools Used
 
