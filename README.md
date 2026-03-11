@@ -375,7 +375,7 @@ visa-processing-prediction/
 │    └── processed/
 │       ├── cleaned_visa_data.csv
 │       └── final_ml_ready_visa_data.csv
-│
+│__MIT license.txt
 ├─eda.py
 │── eda.ipynb
 │__visa_prediction.py
