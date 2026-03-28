@@ -435,15 +435,20 @@ visa-processing-prediction/
 
 ---
 
-Tools & Technologies Used
-Python – Data processing, modeling, and backend API
-Pandas & NumPy – Data manipulation and numerical computations
-Scikit-learn – Regression models, train-test split, evaluation metrics
-XGBoost – Gradient boosting model for best predictive performance
-Flask – Backend API to serve predictions
-Render – Hosting and deploying backend services
-Vercel – Hosting and deploying frontend (index.html)
-Pickle – Saving and loading models and encoders
-HTML, CSS, JavaScript – Frontend user interface
+### Tools & Technologies Used
+
+* **Python** – Data processing, modeling, and backend API
+* **Pandas & NumPy** – Data manipulation and numerical computations
+* **Scikit-learn** – Regression models, train-test split, evaluation metrics
+* **XGBoost** – Gradient boosting model for best predictive performance
+* **Flask** – Backend API to serve predictions
+* **Render** – Hosting and deploying backend services
+* **Vercel** – Hosting and deploying frontend (index.html)
+* **Pickle** – Saving and loading models and encoders
+* **HTML, CSS, JavaScript** – Frontend user interface
 
 ---
+
+
+
+
