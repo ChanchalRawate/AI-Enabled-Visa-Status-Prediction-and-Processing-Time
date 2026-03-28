@@ -112,27 +112,6 @@ Captures potential weekday vs weekend submission patterns.
 
 ---
 
-## 🔹 Aggregated Feature
-
-### `visa_avg_processing_time`
-
-Average processing time grouped by visa class.
-
-This captures visa-type-specific behavior and workload differences.
-
----
-
-## ⚠ Country Feature Analysis
-
-`COUNTRY_OF_CITIZENSHIP` contained ~93% missing values.
-
-To avoid noise and unreliable modeling:
-
-* Country-level aggregation was not used as a primary feature.
-* Feature selection decisions were made based on data quality, not assumption.
-
----
-
 #  Feature Validation
 
 After feature engineering:
@@ -144,28 +123,35 @@ After feature engineering:
 
 ---
 
-#  Encoding & Scaling
+#  Feature Encoding
+Perfect! Here’s a clean, professional section for your README that includes all three features together:
+
+---
+
+### **Feature Encodings**
+
+### `visa_avg_processing_time`
+
+Average processing time grouped by **visa class**.
+This captures visa-type-specific behavior and workload differences.
+
+### `country_avg_processing_time`
+
+Average processing time grouped by **country**.
+This reflects country-specific trends, showing how different embassies or consulates manage workloads and delays.
+
+### `state_avg_processing_time`
+
+Average processing time grouped by **state** (within a country).
+This accounts for regional differences in processing, capturing variations between local consulates or offices.
+
+---
 
 ### Encoding
 
 One-Hot Encoding applied to:
 
-* VISA_CLASS
-* CASE_STATUS
-* WORK_STATE
 * season
-
-### Scaling
-
-StandardScaler applied to:
-
-* application_month
-* visa_avg_processing_time
-* years_since_start
-* application_dayofweek
-
-Target variable was not scaled.
-
 ---
 
 #  Milestone 2 Output
@@ -202,168 +188,201 @@ Due to strong temporal trends, a random train-test split may introduce:
 
 ## Milestone 3 – Model Development & Evaluation
 
-This phase focuses on building regression models to estimate visa processing time and evaluating their predictive performance.
+This milestone focuses on **building regression models** to estimate visa processing time and evaluating their predictive performance.
 
 ### Objective
 
-Develop baseline regression models to predict **visa processing time (in days)** and identify the best-performing model using standard regression metrics.
+Predict **visa processing time (in days)** using multiple regression models and identify the best-performing model using standard regression metrics.
 
-Target variable:
 
-```
-processing_time_days
-```
+## Modeling Approach
 
----
+Three regression models were trained and evaluated:
 
-# Modeling Approach
+1. **Linear Regression** – Simple baseline model; assumes linear relationships.
+2. **Random Forest Regressor** – Captures non-linear relationships and feature interactions.
+3. **XGBoost Regressor** – Gradient boosting model, often the best-performing for tabular data.
 
-Two regression models were trained and evaluated:
-
-1. Linear Regression
-2. Random Forest Regressor
-
-These models were chosen because:
-
-* Linear Regression provides a **simple baseline model**
-* Random Forest captures **non-linear relationships and feature interactions**
-
-Both models were trained on the **feature-engineered dataset created in Milestone 2**.
+All models were trained on the **feature-engineered dataset** created in Milestone 2.
 
 ---
 
-# Train-Test Split
-
-The dataset was divided into training and testing sets to evaluate model generalization.
+## Train-Test Split
 
 ```
 Train Set : 70%
 Test Set  : 30%
 ```
 
-The training set is used for model learning, while the test set evaluates predictive performance on unseen data.
+Training set is used for model learning; test set evaluates performance on unseen data.
 
 ---
 
-# Model 1 – Linear Regression
+## Model Evaluation Metrics
 
-Linear Regression was used as a baseline model to understand how well a simple linear relationship explains the variation in visa processing time.
-
-Key Characteristics:
-
-* Assumes a linear relationship between features and target
-* Fast to train and easy to interpret
-* Serves as a benchmark for more complex models
+* **Mean Absolute Error (MAE):** Average absolute difference between predicted and actual values. Lower is better.
+* **Root Mean Squared Error (RMSE):** Penalizes larger errors more heavily. Lower is better.
+* **R² Score:** Proportion of variance explained by the model. Higher is better.
 
 ---
 
-# Model 2 – Random Forest Regressor
+## Model Comparison
 
-Random Forest is an ensemble learning algorithm that builds multiple decision trees and combines their predictions.
+| Model             | MAE   | RMSE  | R² Score |
+| ----------------- | ----- | ----- | -------- |
+| Linear Regression | 14.17 | 37.98 | 0.435    |
+| Random Forest     | 11.24 | 33.34 | 0.565    |
+| XGBoost           | 11.27 | 33.03 | 0.573    |
 
-Advantages:
-
-* Captures complex non-linear relationships
-* Handles feature interactions automatically
-* Reduces overfitting through ensemble averaging
-
-Random Forest often performs better than simple linear models when the underlying relationships are complex.
+**Observation:** XGBoost slightly outperforms Random Forest in terms of R² and RMSE, making it the final model of choice.
 
 ---
 
-# Model Evaluation Metrics
+## Hyperparameter Tuning
 
-Two standard regression metrics were used to evaluate model performance.
+**Random Forest:**
 
-### Mean Absolute Error (MAE)
+* Tuned `n_estimators` (number of trees) and `max_depth` using GridSearchCV.
+* Best parameters: `{'n_estimators': 50, 'max_depth': 10}`
 
-MAE measures the average absolute difference between predicted and actual values.
+**XGBoost:**
 
-Lower MAE indicates better predictive accuracy.
-
-### Root Mean Squared Error (RMSE)
-
-RMSE penalizes larger errors more heavily and provides insight into prediction variance.
-
-Lower RMSE indicates a more accurate model.
-
-Both metrics provide complementary views of model performance.
+* Tuned `n_estimators`, `max_depth`, and `learning_rate`.
+* Best parameters: `{'n_estimators': 100, 'max_depth': 5, 'learning_rate': 0.1}`
 
 ---
 
-# Model Comparison
+## Feature Importance
 
-After training both models, their performance was compared using MAE and RMSE.
+Random Forest and XGBoost provide **feature importance scores**:
 
-| Model             | MAE | RMSE |
-| ----------------- | ---- | ----- |
-| Linear Regression | 82   | 136   |
-| Random Forest     | 30   | 87     |
-
-Lower values indicate better performance.
+* `visa_avg_processing_time`, `country_avg_processing_time`, `state_avg_processing_time` are highly influential.
+* Other features like `application_month`, `application_dayofweek`, and `season` also contribute to model predictions.
 
 ---
 
-# Hyperparameter Tuning
+## Final Model
 
-To further improve performance, Random Forest was optimized using **Grid Search Cross Validation**.
-
-The following parameters were tuned:
-
-* `n_estimators` – number of trees
-* `max_depth` – maximum tree depth
-
-GridSearchCV automatically evaluates multiple parameter combinations and selects the best performing configuration.
-
-This helps improve model performance while preventing overfitting.
+* **Model:** XGBoost Regressor
+* **Saved as:** `xgb_model.json` and `xgb_model.pkl`
+* Ready for **backend deployment** to predict visa processing time via the API.
+Perfect! You can keep it concise like that. Here’s a slightly polished version you can drop directly into your README so it reads cleanly:
 
 ---
 
-# Model Visualization
+## Model Artifacts
 
-Two visual analyses were performed to interpret the model.
+The backend uses the following files:
 
-### Actual vs Predicted Plot
-
-A scatter plot comparing predicted values against actual processing times helps visually assess model accuracy.
-
-Points close to the diagonal line indicate accurate predictions.
-
----
-
-### Feature Importance
-
-Random Forest provides feature importance scores indicating how much each feature contributes to predictions.
-
-This helps identify the most influential predictors.
-
-Key insights include:
-
-* Temporal features such as **years_since_start** strongly influence predictions
-* Aggregated features such as **visa_avg_processing_time** contribute meaningful signal
+| File                  | Description                                                    |
+| --------------------- | -------------------------------------------------------------- |
+| `xgb_model.json`      | XGBoost model for predicting visa processing time.             |
+| `xgb_model.pkl`       | Pickled XGBoost model for local Python usage.                  |
+| `visa_encoder.pkl`    | Contains **visa_avg_processing_time** for each visa type.      |
+| `country_encoder.pkl` | Contains **country_avg_processing_time** for each country.     |
+| `state_encoder.pkl`   | Contains **state_avg_processing_time** for each state.         |
+| `columns.pkl`         | Feature column list from the training dataset to align inputs. |
 
 ---
 
-# Milestone 3 Output
-
-The trained model and evaluation results provide a baseline predictive system for estimating visa processing time.
-
-Key deliverables:
-
-* Trained Linear Regression model
-* Trained Random Forest model
-* Model performance metrics (MAE, RMSE)
-* Feature importance analysis
-* Visualization of prediction performance
 
 ---
 
-# Key Findings
+## Milestone 3 – Summary Diagram & Workflow
 
-* Random Forest performed better than Linear Regression due to its ability to model non-linear relationships.
-* Temporal features played a significant role in predicting processing time.
-* Feature engineering from Milestone 2 significantly improved model learning capability.
-* Ensemble methods are more suitable for complex real-world datasets like visa processing data.
+**Objective:** Build and evaluate regression models to predict **visa processing time (days)**.
+
+**Workflow:**
+
+```
+Feature-Engineered Dataset (Milestone 2)
+            │
+            ▼
+    Train-Test Split (70% / 30%)
+            │
+            ▼
+   ┌───────────────┐
+   │   Models      │
+   │---------------│
+   │ 1. Linear     │
+   │ 2. Random     │
+   │    Forest     │
+   │ 3. XGBoost    │
+   └───────────────┘
+            │
+            ▼
+   Evaluate Models → MAE / RMSE / R²
+            │
+            ▼
+   Hyperparameter Tuning (GridSearchCV)
+            │
+            ▼
+   Final Model Selection → XGBoost (Best)
+            │
+            ▼
+   Save Artifacts → xgb_model.json, xgb_model.pkl, encoders, columns
+```
+
+**Key Points:**
+
+* Linear Regression – baseline, interpretable
+* Random Forest – captures non-linear relationships
+* XGBoost – best-performing, selected as final model
+* Artifacts stored for backend prediction pipeline
+
+---
+Here’s a compact and professional section you can add to your README for **Milestone 4 – Web Application & Deployment**:
+
+---
+
+## Milestone 4 – Web Application & Deployment
+
+**Objective:** Build a user-friendly web interface for real-time visa processing time prediction and deploy it online.
+
+**Workflow:**
+
+```
+Frontend (HTML / CSS / JS)
+            │
+            ▼
+ Collect User Input → Month, Day, Years, Season, Visa, Country, State
+            │
+            ▼
+   POST Request → Backend API
+            │
+            ▼
+Backend (Flask / XGBoost Model)
+ - Load model & encoders
+ - Encode inputs safely
+ - Predict processing time
+ - Return JSON response
+            │
+            ▼
+Frontend Displays Prediction
+ - Shows predicted days
+ - Range (+/- 5 days)
+ - Error handling for invalid inputs or server errors
+```
+
+**Deployment:**
+
+* **Backend:** Render
+
+  * URL: `https://<your-render-backend>.onrender.com/predict`
+  * Handles CORS and serves prediction API
+
+* **Frontend:** Vercel
+
+  * URL: `https://visa-time-ai.vercel.app`
+  * Calls Render backend API for real-time predictions
+  * Fully responsive, includes loader and error messages
+
+**Key Features:**
+
+* Real-time prediction using XGBoost
+* Safe handling of unseen visa, country, or state values
+* Loader indicator and user-friendly error messages
+* Fully deployed and accessible via web
 
 ---
 # Project Structure
