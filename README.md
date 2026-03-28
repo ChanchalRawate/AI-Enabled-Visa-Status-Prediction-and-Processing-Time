@@ -84,8 +84,6 @@ This revealed a strong temporal trend and motivated creation of time-based featu
 
 The following features were created based on data insights:
 
----
-
 ## 🔹 Temporal Features
 
 ### `application_month`
