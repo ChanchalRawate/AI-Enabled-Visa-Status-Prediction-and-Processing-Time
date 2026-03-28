@@ -6,7 +6,7 @@ import pickle
 from xgboost import XGBRegressor
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # ================= LOAD MODEL =================
 model = XGBRegressor()
