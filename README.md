@@ -139,12 +139,20 @@ Average processing time grouped by **state** (within a country).
 This accounts for regional differences in processing, capturing variations between local consulates or offices.
 
 ---
+### One-Hot Encoding
 
-### Encoding
+* **`season`**: The `season` feature was categorical (e.g., Peak, Off-Peak) and was transformed into one-hot encoded variables.
 
-One-Hot Encoding applied to:
+  * This allows the machine learning model to interpret the season information numerically without implying any ordinal relationship.
+  * Example:
 
-* season
+| season   | season_Peak | season_Off-Peak |
+| -------- | ----------- | --------------- |
+| Peak     | 1           | 0               |
+| Off-Peak | 0           | 1               |
+
+* One-hot encoding ensures that the model treats each season as a separate, independent feature.
+
 ---
 
 #  Milestone 2 Output
