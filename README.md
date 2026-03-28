@@ -177,7 +177,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-#Milestone 3 – Model Development & Evaluation
+# Milestone 3 – Model Development & Evaluation
 
 This milestone focuses on **building regression models** to estimate visa processing time and evaluating their predictive performance.
 
@@ -435,11 +435,15 @@ visa-processing-prediction/
 
 ---
 
-## Tools Used
+Tools & Technologies Used
+Python – Data processing, modeling, and backend API
+Pandas & NumPy – Data manipulation and numerical computations
+Scikit-learn – Regression models, train-test split, evaluation metrics
+XGBoost – Gradient boosting model for best predictive performance
+Flask – Backend API to serve predictions
+Render – Hosting and deploying backend services
+Vercel – Hosting and deploying frontend (index.html)
+Pickle – Saving and loading models and encoders
+HTML, CSS, JavaScript – Frontend user interface
 
-* **Python**
-* **Pandas**
-* **VS Code**
-* **jupyter notetbook**
 ---
-
