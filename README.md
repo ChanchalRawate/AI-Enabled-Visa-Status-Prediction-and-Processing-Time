@@ -155,7 +155,7 @@ This accounts for regional differences in processing, capturing variations betwe
 
 ---
 
-#  Milestone 2 Output
+### Milestone 2 Output
 
 Final model-ready dataset:
 
@@ -167,7 +167,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-#  Key Insights
+### Key Insights
 
 * Processing efficiency improved significantly over time.
 * Temporal features are dominant predictors.
@@ -177,7 +177,7 @@ This dataset is fully prepared for modeling.
 
 ---
 
-## Milestone 3 – Model Development & Evaluation
+#Milestone 3 – Model Development & Evaluation
 
 This milestone focuses on **building regression models** to estimate visa processing time and evaluating their predictive performance.
 
