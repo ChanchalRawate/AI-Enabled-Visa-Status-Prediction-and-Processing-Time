@@ -118,13 +118,8 @@ After feature engineering:
 * Temporal trend was visually validated.
 * Seasonal distribution plots were analyzed.
 * Feature usefulness was confirmed before proceeding.
-
 ---
 
-#  Feature Encoding
-Perfect! Here’s a clean, professional section for your README that includes all three features together:
-
----
 
 ### **Feature Encodings**
 
