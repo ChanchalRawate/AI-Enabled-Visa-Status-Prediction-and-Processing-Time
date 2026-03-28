@@ -176,16 +176,6 @@ This dataset is fully prepared for modeling.
 
 ---
 
-# Modeling Consideration
-
-Due to strong temporal trends, a random train-test split may introduce:
-
-* Distribution shift
-* Temporal leakage
-* Misleading performance metrics
-
----
-
 ## Milestone 3 – Model Development & Evaluation
 
 This milestone focuses on **building regression models** to estimate visa processing time and evaluating their predictive performance.
@@ -330,10 +320,6 @@ Feature-Engineered Dataset (Milestone 2)
 * XGBoost – best-performing, selected as final model
 * Artifacts stored for backend prediction pipeline
 
----
-Here’s a compact and professional section you can add to your README for **Milestone 4 – Web Application & Deployment**:
-
----
 
 ## Milestone 4 – Web Application & Deployment
 
@@ -390,34 +376,61 @@ Frontend Displays Prediction
 ```
 visa-processing-prediction/
 │
-├── data/
-│    └── processed/
-│       ├── cleaned_visa_data.csv
-│       └── final_ml_ready_visa_data.csv
-│__MIT license.txt
-├─eda.py
-│── eda.ipynb
-│__visa_prediction.py
-|__ visa_prediction.ipynb
-├──raw dataset
-│── preprocessing.py
+├── Backend/
+│    ├── backend.py
+│    ├── columns.pkl
+│    ├── country_encoder.pkl
+│    ├── state_encoder.pkl
+│    ├── visa_encoder.pkl
+│    ├── xgb_model.json
+│    └── requirements.txt
 │
-└── README.md
+├── Frontend/
+│    └── index.html
+
+│── Milestone_1.py
+│── Milestone_2.ipynb
+│── Milestone_3.ipynb
+│
+├──Chanchal_Rawate_Defect_Tracker.xlsx
+│── Chanchal_Rawate_Unit_Test_Plan.xlsx
+├──Chanchal_Rawate_Agile.xl
+│    
+├── README.md
+└── MIT License.txt
 ```
 
 
----
+### Skills Demonstrated
 
-# Skills Demonstrated (Updated)
+**Machine Learning & Data Science**
 
-* Data Cleaning & Preprocessing
-* Exploratory Data Analysis (EDA)
-* Feature Engineering
-* Regression Modeling
-* Model Evaluation (MAE, RMSE)
-* Hyperparameter Tuning
-* Feature Importance Analysis
-* End-to-End Machine Learning Workflow
+* Regression modeling: Linear Regression, Random Forest, XGBoost
+* Feature engineering & preprocessing
+* Hyperparameter tuning with GridSearchCV
+* Model evaluation: MAE, RMSE, R² score
+* Handling categorical variables with encoding & safe mean imputation
+
+**Backend Development**
+
+* Flask API development for ML model deployment
+* Data serialization with Pickle
+* REST API integration with frontend
+* CORS handling for cross-origin requests
+
+**Frontend Development**
+
+* Responsive UI using HTML, CSS, and JavaScript
+* Form validation and error handling
+* Dynamic predictions via API calls
+* Loader animations and user-friendly interface
+
+**Web Deployment & Cloud**
+
+* Deploying frontend on Vercel
+* Deploying backend on Render
+* Linking frontend to live backend URL
+* Environment variable configuration and version control
 
 ---
 
