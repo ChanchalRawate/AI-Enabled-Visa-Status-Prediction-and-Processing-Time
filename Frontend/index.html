@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VisaTime AI</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .navbar {
+        background: #2d3748;
+        color: white;
+        padding: 15px 30px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 420px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #4c51bf;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #434190;
+      }
+
+      .result {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">VisaTime AI ✈️</div>
+
+    <div class="container">
+      <div class="card">
+        <h2 class="title">Visa Processing Predictor</h2>
+
+        <input
+          id="month"
+          type="number"
+          placeholder="Application Month (1-12)"
+        />
+        <input id="years" type="number" placeholder="Years Since Start" />
+        <input id="day" type="number" placeholder="Day of Week (0-6)" />
+
+        <select id="season">
+          <option value="" disabled selected>Select Season</option>
+          <option value="Peak">Peak Season</option>
+          <option value="off-peak">Off-Peak</option>
+        </select>
+
+        <select id="visa">
+          <option value="" disabled selected>Select Visa Class</option>
+          <option value="H1B">H1B</option>
+          <option value="E3">E3</option>
+          <option value="L1">L1</option>
+        </select>
+
+        <select id="country">
+          <option value="" disabled selected>Select Country</option>
+          <option value="INDIA">India</option>
+          <option value="CHINA">China</option>
+          <option value="USA">USA</option>
+        </select>
+
+        <select id="state">
+          <option value="" disabled selected>Select State</option>
+          <option value="CA">California</option>
+          <option value="NY">New York</option>
+          <option value="TX">Texas</option>
+        </select>
+
+        <button onclick="predict()">Predict Time</button>
+
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+
+    <script>
+      function predict() {
+        // ✅ VALIDATION
+        if (
+          !document.getElementById("visa").value ||
+          !document.getElementById("country").value ||
+          !document.getElementById("state").value ||
+          !document.getElementById("season").value
+        ) {
+          document.getElementById("result").innerText =
+            "⚠️ Please fill all fields";
+          return;
+        }
+
+        document.getElementById("result").innerText = "⏳ Predicting...";
+
+        fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            month: Number(document.getElementById("month").value),
+            years: Number(document.getElementById("years").value),
+            day: Number(document.getElementById("day").value),
+            season: document.getElementById("season").value,
+            visa: document.getElementById("visa").value,
+            country: document.getElementById("country").value,
+            state: document.getElementById("state").value,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.error) {
+              document.getElementById("result").innerText = "❌ " + data.error;
+            } else {
+              document.getElementById("result").innerText =
+                `✅ ${data.prediction} days (${data.range[0]} - ${data.range[1]} days)`;
+            }
+          })
+          .catch(() => {
+            document.getElementById("result").innerText = "❌ Server error";
+          });
+      }
+    </script>
+  </body>
+</html>
