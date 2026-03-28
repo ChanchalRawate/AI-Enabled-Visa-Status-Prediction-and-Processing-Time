@@ -78,11 +78,7 @@
       <div class="card">
         <h2 class="title">Visa Processing Predictor</h2>
 
-        <input
-          id="month"
-          type="number"
-          placeholder="Application Month (1-12)"
-        />
+        <input id="month" type="number" placeholder="Application Month (1-12)" />
         <input id="years" type="number" placeholder="Years Since Start" />
         <input id="day" type="number" placeholder="Day of Week (0-6)" />
 
@@ -120,46 +116,52 @@
     </div>
 
     <script>
-      function predict() {
-        // ✅ VALIDATION
+      async function predict() {
+        const resultDiv = document.getElementById("result");
+
+        // Validation
         if (
           !document.getElementById("visa").value ||
           !document.getElementById("country").value ||
           !document.getElementById("state").value ||
           !document.getElementById("season").value
         ) {
-          document.getElementById("result").innerText =
-            "⚠️ Please fill all fields";
+          resultDiv.innerText = "⚠️ Please fill all fields";
           return;
         }
 
-        document.getElementById("result").innerText = "⏳ Predicting...";
+        resultDiv.innerText = "⏳ Predicting...";
 
-        fetch("https://ai-enabled-visa-status-prediction-and-1c2a.onrender.com/predict", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            month: Number(document.getElementById("month").value),
-            years: Number(document.getElementById("years").value),
-            day: Number(document.getElementById("day").value),
-            season: document.getElementById("season").value,
-            visa: document.getElementById("visa").value,
-            country: document.getElementById("country").value,
-            state: document.getElementById("state").value,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.error) {
-              document.getElementById("result").innerText = "❌ " + data.error;
-            } else {
-              document.getElementById("result").innerText =
-                `✅ ${data.prediction} days (${data.range[0]} - ${data.range[1]} days)`;
+        try {
+          const response = await fetch(
+            "https://ai-enabled-visa-status-prediction-and-1c2a.onrender.com/predict",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                month: Number(document.getElementById("month").value),
+                years: Number(document.getElementById("years").value),
+                day: Number(document.getElementById("day").value),
+                season: document.getElementById("season").value,
+                visa: document.getElementById("visa").value,
+                country: document.getElementById("country").value,
+                state: document.getElementById("state").value,
+              }),
             }
-          })
-          .catch(() => {
-            document.getElementById("result").innerText = "❌ Server error";
-          });
+          );
+
+          const data = await response.json();
+
+          if (!response.ok || data.error) {
+            throw new Error(data.error || "Server returned an error");
+          }
+
+          resultDiv.innerText = `✅ ${data.prediction} days (${data.range[0]} - ${data.range[1]} days)`;
+        } catch (err) {
+          console.error(err);
+          resultDiv.innerText =
+            "❌ Error connecting to the server. Please try again in a few seconds.";
+        }
       }
     </script>
   </body>
