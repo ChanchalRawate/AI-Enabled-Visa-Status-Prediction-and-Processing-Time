@@ -355,7 +355,7 @@ Frontend Displays Prediction
 
 * **Backend:** Render
 
-  * URL: `https://<your-render-backend>.onrender.com/predict`
+  * URL: `https://ai-enabled-visa-status-prediction-and-1c2a.onrender.com/predict`
   * Handles CORS and serves prediction API
 
 * **Frontend:** Vercel
