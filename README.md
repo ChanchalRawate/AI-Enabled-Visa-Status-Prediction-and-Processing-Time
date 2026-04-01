@@ -391,6 +391,69 @@ Frontend Displays Prediction
 * Fully deployed and accessible via web
 
 ---
+## 🧪 Multiple Test Cases
+
+To evaluate the model’s performance and reliability, it was tested on a variety of input combinations representing different real-world scenarios.
+
+---
+
+### 🔹 Test Case 1
+
+**Input Features:**
+
+| Feature           | Value |
+| ----------------- | ----- |
+| Application Month | 5     |
+| Years Since Start | 3     |
+| Day of Week       | 2     |
+| Season            | Peak  |
+| Visa Class        | H1B   |
+| Country           | India |
+| Work State        | CA    |
+
+**Prediction:**
+👉 **365 days** *(range: 360 – 365 days)*
+
+---
+
+### 🔹 Test Case 2
+
+**Input Features:**
+
+| Feature           | Value    |
+| ----------------- | -------- |
+| Application Month | 10       |
+| Years Since Start | 2        |
+| Day of Week       | 4        |
+| Season            | Off-Peak |
+| Visa Class        | E3       |
+| Country           | USA      |
+| Work State        | NY       |
+
+**Prediction:**
+👉 **120 days** *(range: 115 – 125 days)*
+
+---
+
+### 🔹 Test Case 3
+
+**Input Features:**
+
+| Feature           | Value |
+| ----------------- | ----- |
+| Application Month | 3     |
+| Years Since Start | 5     |
+| Day of Week       | 1     |
+| Season            | Peak  |
+| Visa Class        | L1    |
+| Country           | China |
+| Work State        | TX    |
+
+**Prediction:**
+👉 **210 days** *(range: 205 – 215 days)*
+
+---
+
 # Project Structure
 
 ```
