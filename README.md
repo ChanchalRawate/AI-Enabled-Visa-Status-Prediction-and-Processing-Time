@@ -6,7 +6,7 @@ Visa applicants often face long waiting times and uncertainty regarding the stat
 By analyzing temporal patterns, case status, and key structural attributes such as visa class, country, and work state, the system generates accurate, data-driven predictions. This approach enhances transparency, reduces uncertainty, and helps applicants better plan their decisions.
 ---
 
-###  Problem Statement
+# Problem Statement
 
 Given visa application data, predict the number of days required to process the application.
 
