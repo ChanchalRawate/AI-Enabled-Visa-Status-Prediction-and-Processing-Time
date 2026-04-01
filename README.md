@@ -26,23 +26,51 @@ DECISION_DATE - APPLICATION_DATE
 
 # Project Milestones
 
-##  Milestone 1 – Data Cleaning & Preprocessing
+Yes — and here is the **final, corrected README written exactly for Milestone-1**, aligned with **one Python file only**.
+This is clean, minimal, and mentor-proof.
 
+---
 
+# AI-Enabled Visa Status Prediction and Processing Time Estimation
 
-* Converted date columns to proper datetime format
-* Created target variable (`processing_time_days`)
-* Removed invalid or inconsistent records
-* Handled missing values
-* Standardized categorical values
-* Verified logical consistency
+### Milestone 1: Data Collection & Preprocessing
 
-### Output
+## Overview
 
-```
-data/processed/cleaned_visa_data.csv
-```
+This milestone focuses on collecting visa application data and preparing it for further analysis. The goal is to clean, standardize, and structure the raw dataset by retaining only relevant attributes and creating mandatory derived fields required for subsequent stages.
 
+---
+
+## Tasks Performed
+
+### Data Collection
+
+* Loaded visa-related data from a publicly available dataset
+* Inspected dataset shape, columns, and missing values
+
+### Data Preprocessing
+
+* Retained only required columns:
+
+  * Visa status
+  * Visa class
+  * Country of citizenship
+  * Work state
+  * Application date
+  * Decision date
+* Renamed columns for clarity and consistency
+* Converted date columns to a standard datetime format
+* Created a mandatory derived feature:
+
+  * `processing_time_days` = decision date − application date
+* Removed records with missing or invalid date values
+* Ensured processing time values are non-negative
+
+---
+
+## Output
+
+* A clean, structured dataset saved as `cleaned_visa_data.csv`, ready for exploratory analysis
 ---
 
 ##  Milestone 2 – EDA & Feature Engineering
