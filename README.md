@@ -1,9 +1,8 @@
 # AI-Enabled Visa Status Prediction and Processing Time Estimation
 
 ## Project Overview
-Visa applicants often face long waiting times and uncertainty regarding the status of their applications. This project addresses this challenge by developing a predictive analytics system that estimates visa processing times using historical application data.
 
-By analyzing temporal patterns, case status, and key structural attributes such as visa class, country, and work state, the system generates accurate, data-driven predictions. This approach enhances transparency, reduces uncertainty, and helps applicants better plan their decisions.
+Visa applicants often experience long waiting periods and uncertainty about the progress of their applications. To address this issue, this project develops a predictive analytics system that estimates visa processing times using historical application data.By analyzing temporal patterns, case status, and key factors such as visa class, country, and work state, the system produces accurate, data-driven predictions. This improves transparency, reduces uncertainty, and enables applicants to make more informed decisions and plan effectively.
 ---
 
 # Problem Statement
